@@ -1,9 +1,17 @@
 import React from 'react';
 import Rocket from '../../assets/rocket.png'
 import './item.css';
+import Moment from 'moment';
 
-const Item = (props) => {
-    console.group('data');
+const Item = ({item}) => {
+    let {mission_name,launch_date_local}=item;
+    
+return(<div>
+    <p>{mission_name}</p>
+    <p>{Moment(launch_date_local).format('d MMM')}</p>
+
+</div>)
+   /* console.group('data');
     const titleMission = props.item.mission_name;
     console.log(titleMission);
     const subtitleMission = props.item.launch_date_local;
@@ -22,7 +30,7 @@ const Item = (props) => {
                 <p>{date}</p> 
             </div>
         </div>
-    )
+    )*/
 };
 
 export default Item;
